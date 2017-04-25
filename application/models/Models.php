@@ -34,6 +34,13 @@ class Models extends CI_Model {
 		return $query->result();
 	}
 
+	public function get_chart_price($p_index, $c_index) 
+	{
+		$query = $this->db->query("SELECT dp_id, p_id, c_id, dp_price FROM mannabox.fm_daily_price WHERE p_id = ".$p_index." AND c_id = ".$c_index."");
+		$data = $query -> result();
+		return $data;
+	}
+
 	// public function insert_entry()
 	// {
  //        $this->c_id    = $_POST['c_id']; // please read the below note
@@ -52,6 +59,6 @@ class Models extends CI_Model {
 	// }
 }
 
-
+// SELECT dp_id, p_id, c_id, dp_price FROM mannabox.fm_daily_price WHERE p_id = 1 AND c_id = 1;
 
 ?>

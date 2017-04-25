@@ -29,6 +29,7 @@ class Welcome extends CI_Controller {
 		$this->load->model('Models');
 
         $product['product'] = $this->Models->get_product_entries();
+        $product['company'] = $this->Models->get_company_entries();
         $product['mannabox_price'] = $this->Models->get_mannabox_price_entries();
         // $daily_price['daily_price'] = $this->Models->get_daily_price_entries();
 
